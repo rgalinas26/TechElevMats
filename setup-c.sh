@@ -29,7 +29,7 @@ git config --global difftool.code.cmd "code -w -d \$LOCAL \$REMOTE"
 echo
 echo "Configuring Upstream..."
 
-cd "${reponame}-${cohort}"
+# cd "${reponame}-${cohort}"
 git remote add upstream "${TEAM_REPO}/${cohort}-main"
 git config branch.master.mergeOptions "--no-edit"
 
