@@ -1,65 +1,49 @@
-.DS_Store
-._*
 
-**/target/
-**/.metadata
-**/.classpath
-**/.project
-bin/
-tmp/
-*.tmp
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
 *.bak
-*.swp
-*~.nib
-local.properties
-**/.settings/
-.loadpath
-.recommenders
+*.cache
+*.ilk
+*.log
+*.dll
+*.lib
+*.sbr
+bin/
+obj/
+packages/
+.vs/
 
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
-# Java annotation processor (APT)
-.factorypath
-
-# PDT-specific (PHP Development Tools)
-.buildpath
-
-# sbteclipse plugin
-.target
-
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
-
-# Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
-.scala_dependencies
-.worksheet
-
-#Vue stuff
+.DS_Store
 node_modules
 /dist
 
-/tests/e2e/videos/
-/tests/e2e/screenshots/
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+# Eclipse
+.classpath
+.project
+.settings
+target/
+
+# .NET
+obj/
+bin/
+.vs/
+*.user
 
 # local env files
 .env.local
