@@ -17,6 +17,10 @@ namespace CollectionsLectureNotes
             //
             //
 
+            int[] nums = new int[] { 1, 2, 30 };
+            foreach (int n in nums)
+                Console.WriteLine(n);
+
             // Creating lists of integers
 
 
