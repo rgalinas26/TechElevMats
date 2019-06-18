@@ -6,7 +6,8 @@ using WorldGeography.Models;
 
 namespace WorldGeography.Tests
 {
-    class CitySqlDAOTests
+    [TestClass]
+    public class CitySqlDAOTests : DAOTests
     {
 
         [DataTestMethod]
@@ -26,10 +27,24 @@ namespace WorldGeography.Tests
         public void AddCity_Should_IncreaseCountBy1()
         {
             // Arrange
+            CitySqlDAO dao = new CitySqlDAO(connectionString);
+
+            IList<City> list = dao.GetCitiesByCountryCode("USA");
+            int cityCountBefore = list.Count;
 
             // Act
+            City city = new City();
+            city.CountryCode = "USA";
+            city.Name = "East Cleveland";
+            city.District = "Ohio";
+            city.Population = 75000;
+            dao.AddCity(city);
 
             // Assert - City count goes up by 1
+            list = dao.GetCitiesByCountryCode("USA");
+            int cityCountAfter = list.Count;
+
+            Assert.AreEqual(cityCountBefore + 1, cityCountAfter);
 
         }
 
@@ -38,10 +53,23 @@ namespace WorldGeography.Tests
         public void AddCity_Should_Fail_IfCountryDoesNotExist()
         {
             // Arrange
+            CitySqlDAO dao = new CitySqlDAO(connectionString);
+
+            IList<City> list = dao.GetCitiesByCountryCode("USA");
+            int cityCountBefore = list.Count;
 
             // Act
+            City city = new City();
+            city.CountryCode = "YYZ";
+            city.Name = "East Cleveland";
+            city.District = "Ohio";
+            city.Population = 75000;
+            dao.AddCity(city);
 
             // Assert - City count goes up by 1
+            list = dao.GetCitiesByCountryCode("USA");
+            int cityCountAfter = list.Count;
+
         }
     }
 }

@@ -56,7 +56,35 @@ namespace WorldGeography.DAL
         // TODO: Implement City.GetCitiesByCountryCode(countryCode)
         public IList<City> GetCitiesByCountryCode(string countryCode)
         {
-            throw new NotImplementedException();
+            List<City> cities = new List<City>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    // column    // param name  
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM city WHERE countryCode = @countryCode;", conn);
+                    // param name    // param value
+                    cmd.Parameters.AddWithValue("@countryCode", countryCode);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        City city = RowToObject(reader);
+                        cities.Add(city);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("An error occurred reading cities by country.");
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+            return cities;
         }
 
         // Given a row (the SqlReader object), create a new city object

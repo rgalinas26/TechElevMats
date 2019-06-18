@@ -16,4 +16,10 @@
     <ProjectReference Include="..\WorldGeography\WorldGeography.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestSetup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -12,7 +12,7 @@ namespace WorldGeography
 {
     class Program
     {
-        private static string connectionString = @"server=.\SqlExpress; database=world; Trusted_Connection=true;";
+        private static string connectionString;
         static void Main(string[] args)
         {
             // Select all countries
@@ -36,7 +36,7 @@ namespace WorldGeography
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
             IConfigurationRoot configuration = builder.Build();
-            string connectionString = configuration.GetConnectionString("World");
+            connectionString = configuration.GetConnectionString("World");
 
 
             ICityDAO cityDAO = new CitySqlDAO(connectionString);
