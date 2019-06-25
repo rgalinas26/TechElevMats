@@ -1,0 +1,71 @@
+:root {
+    --color1:yellow;
+    --color2: lightblue;
+  }
+
+* {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      " . one one . "
+      ". two three ."
+      ". two four ."
+      ". two five  ."
+      ". six . ."
+      ". seven seven .";
+
+      /* grid-gap: 15px; */
+}
+
+section {
+  border: 1px solid darkblue;
+  /* margin: 10px; */
+  padding: 5px;
+}
+
+#section1{
+  grid-area: one;
+  background-color: var(--color1);
+}
+
+#section2{
+  grid-area: two;
+  background-color: var(--color2);
+}
+
+#section3{
+  grid-area: three;
+  background-color: var(--color1);
+}
+
+#section4{
+  grid-area: four;
+  background-color: var(--color2);
+}
+
+#section5{
+  grid-area: five;
+  background-color: var(--color1);
+}
+
+#section6{
+  grid-area: six;
+  background-color: var(--color2);
+}
+
+#section7{
+  grid-area: seven;
+  background-color: var(--color1);
+}
+
+
+
