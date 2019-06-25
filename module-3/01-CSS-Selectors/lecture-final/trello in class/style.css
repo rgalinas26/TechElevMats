@@ -1,0 +1,125 @@
+html {
+    /* Set the default size */
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+}
+
+div.trello-list {
+    /* change to an inline-block to display left-to-right across the screen */
+    display: inline-block;
+
+    /* Make the lists a fixed width */
+    width: 300px;
+
+    background-color: #eeeeee;
+    border-radius: 5px;
+    vertical-align: top;
+}
+
+div.trello-list > h2
+{
+    /* Move it away from the edge */
+    margin: 8px;
+
+    /* Make the font the same size as the rest of the document */
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+ol.cards
+{
+    margin: 0 8px 0 8px;
+    padding: 0;
+}
+
+li.card
+{
+    list-style: none;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: .9rem;
+    white-space: normal;
+    /* height: 60px; */
+}
+
+li.card:hover
+{
+    background-color: cornsilk;
+}
+
+header > h1, header > p {
+    /* Render elements side by side */    
+    display: inline-block;    
+
+    /* Limit height of items */
+    height: 20px;
+
+    /* Push border away on the right */
+    padding-right: 20px;
+
+    /* Middle align content within block */
+    vertical-align: middle;
+
+    /* Slight off-shade of white */
+    color: rgba(255, 255, 255, 0.8);
+
+    /* Vertical line between items */
+    border-right: 1px solid rgba(255, 255, 255, 0.5);    
+}
+
+header > h1 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+header > p{
+    padding-left: 10px;
+    font-size: .9rem;
+}
+
+.labels span {
+    display: inline-block;
+    vertical-align: top;
+    width: 35px;
+    height: 8px;
+    border-radius: 3px;
+}
+
+.label.pathway {
+    background-color: red;    
+}
+
+.label.individual {
+    background-color: green;
+}
+
+.label.pair {
+    background-color: #00c2e0;
+}
+
+.label.general {
+    background-color: orange;
+}
+
+.trello-list > a {
+    padding-left: 10px;
+    text-decoration: none;
+    color: #888;
+    font-size: .85rem;
+}
+
+.trello-list > a:hover{
+    background-color: rgba(9, 45, 66, .1);
+}
+
