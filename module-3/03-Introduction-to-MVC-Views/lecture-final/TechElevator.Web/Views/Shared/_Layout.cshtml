@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Add a nav bar and logo to the top of every page -->
+    <img src="~/images/stacked-logo.png" />
+    <nav>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Greeting">Greeting</a></li>
+            <li><a asp-controller="Calculator" asp-action="Index">Calculator</a></li>
+        </ul>
+    </nav>
+
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    int maxKPH = (int)ViewData["max"];
+}
+
+<h2>KPH to MPH Conversion</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>KPH</th>
+            <th>MPH</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int kph = 0; kph <= maxKPH; kph += 10)
+        {
+            <tr>
+                <td>@kph</td>
+                <td>@(kph * 0.62)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
