@@ -1,0 +1,29 @@
+﻿@model CitySearchVM
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+<h2>Search Results</h2>
+<p>Here are the results for your search for Country = @Model.CountryCode, District = @Model.District</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>District</th>
+            <th>Population</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (City city in Model.Cities)
+        {
+        <tr>
+            <td>@city.CityId</td>
+            <td>@city.Name</td>
+            <td>@city.District</td>
+            <td>@city.Population</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
