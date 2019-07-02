@@ -1,0 +1,68 @@
+﻿@model CitySearchVM
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search</h2>
+@*<form method="get" action="/city/searchresults">
+        <table>
+            <tr>
+                <td><label for="countryCode">Country Code:</label></td>
+                <td><input type="text" name="countryCode" id="countryCode" placeholder="e.g., USA"/></td>
+            </tr>
+            <tr>
+                <td><label for="district">District:</label></td>
+                <td><input type="text" name="district" id="district" placeholder="e.g., Ohio" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Go!" /></td>
+            </tr>
+        </table>
+    </form>*@
+
+<form method="get" asp-controller="City" asp-action="Search">
+    <table>
+        <tr>
+            @{ // TODO 01d: Change the input field to a Select. Don't forget the </Select>!!!
+            }
+            <td><label asp-for="CountryCode"></label></td>
+            <td><input asp-for="CountryCode" placeholder="e.g., USA" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="District"></label></td>
+            <td><input asp-for="District" placeholder="e.g., Ohio" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Go!" /></td>
+        </tr>
+    </table>
+</form>
+
+@if (Model.Cities != null)
+{
+    <h2>Search Results</h2>
+    <p>Here are the results for your search for Country = @Model.CountryCode, District = @Model.District</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>District</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (City city in Model.Cities)
+            {
+                <tr>
+                    <td>@city.CityId</td>
+                    <td>@city.Name</td>
+                    <td>@city.District</td>
+                    <td>@city.Population</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
