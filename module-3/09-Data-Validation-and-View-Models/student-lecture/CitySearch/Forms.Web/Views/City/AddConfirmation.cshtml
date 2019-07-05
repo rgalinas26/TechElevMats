@@ -1,0 +1,9 @@
+﻿@model City
+@{
+    ViewData["Title"] = "AddConfirmation";
+}
+
+<h2>Congratulations!</h2>
+<p>You added the city of "@Model.Name", and its id is @Model.CityId.</p>
+<p><a asp-controller="City" asp-action="Detail" asp-route-id="@Model.CityId">Click here</a> to see the details.</p>
+

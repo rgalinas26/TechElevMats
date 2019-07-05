@@ -1,0 +1,32 @@
+﻿@model IList<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Buy Our Products!</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Cost.ToString("C")</td>
+                <td>
+                    <form asp-controller="Store" asp-action="Index" method="post">
+                        <input type="hidden" asp-for="@product.Id" />
+                        <input type="submit" value="Add to Cart" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
