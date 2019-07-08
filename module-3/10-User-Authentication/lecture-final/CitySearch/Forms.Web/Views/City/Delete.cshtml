@@ -1,0 +1,35 @@
+﻿@model CityVM
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+<form method="post">
+    <input type="hidden" name="CityId" value="@Model.City.CityId" />
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>Name:</td>
+                <td>@Model.City.Name</td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>@Model.City.CountryCode</td>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td>@Model.City.District</td>
+            </tr>
+            <tr>
+                <td>Population:</td>
+                <td>@Model.City.Population</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="CONFIRM DELETE!" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>
+

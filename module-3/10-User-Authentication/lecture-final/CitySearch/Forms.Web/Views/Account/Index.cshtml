@@ -1,0 +1,10 @@
+﻿@model BaseVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>My Account</h2>
+
+<p>
+    Welcome <b>@Model.CurrentUser.Username</b>. You are in the role od <b>@Model.CurrentUser.Role</b>.
+</p>
