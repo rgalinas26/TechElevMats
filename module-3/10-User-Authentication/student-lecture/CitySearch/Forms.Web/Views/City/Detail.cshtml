@@ -1,0 +1,30 @@
+﻿@model CityVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>Name:</td>
+            <td>@Model.City.Name</td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td>@Model.City.CountryCode</td>
+        </tr>
+        <tr>
+            <td>District:</td>
+            <td>@Model.City.District</td>
+        </tr>
+        <tr>
+            <td>Population:</td>
+            <td>@Model.City.Population</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<a asp-controller="City" asp-action="Update" asp-route-id="@Model.City.CityId">Modify this city</a>
+<br />
+<a asp-controller="City" asp-action="Delete" asp-route-id="@Model.City.CityId">Delete this city</a>

@@ -1,0 +1,45 @@
+﻿@model CityVM
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add City</h2>
+<form method="post" asp-controller="City" asp-action="Add">
+    <div asp-validation-summary="All" class="validationSummary"></div>
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><label asp-for="City.Name"></label></td>
+                <td>
+                    <input asp-for="City.Name" />
+                    <span asp-validation-for="City.Name" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="City.CountryCode"></label></td>
+                <td>
+                    <input asp-for="City.CountryCode" />
+                    <span asp-validation-for="City.CountryCode" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="City.District"></label></td>
+                <td>
+                    <input asp-for="City.District" />
+                    <span asp-validation-for="City.District" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="City.Population"></label></td>
+                <td>
+                    <input asp-for="City.Population" />
+                    <span asp-validation-for="City.Population" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add City" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
