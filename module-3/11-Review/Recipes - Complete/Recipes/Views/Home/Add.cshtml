@@ -1,0 +1,75 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add Recipe 1</h1>
+
+<form asp-action="Add" asp-controller="Index" method="post">
+    <table>
+        <tbody>
+            <tr>
+                <td><label asp-for="Name"></label></td>
+                <td>
+                    <input asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="Description"></label></td>
+                <td>
+                    <input asp-for="Description" />
+                    <span asp-validation-for="Description"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="ImageFile"></label></td>
+                <td>
+                    <input asp-for="ImageFile" />
+                    <span asp-validation-for="ImageFile"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="Meal"></label></td>
+                <td>
+                    <input asp-for="Meal" />
+                    <span asp-validation-for="Meal"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="Cuisine"></label></td>
+                <td>
+                    <input asp-for="Cuisine" />
+                    <span asp-validation-for="Cuisine"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="PrepTime"></label></td>
+                <td>
+                    <input asp-for="PrepTime" />
+                    <span asp-validation-for="PrepTime"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="CookTime"></label></td>
+                <td>
+                    <input asp-for="CookTime" />
+                    <span asp-validation-for="CookTime"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label asp-for="Serves"></label></td>
+                <td>
+                    <input asp-for="Serves" />
+                    <span asp-validation-for="Serves"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Next ==>" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

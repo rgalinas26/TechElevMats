@@ -1,0 +1,26 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "Add3";
+}
+
+<h1>Add Recipe @Model.Name - Page 3</h1>
+<form asp-action="Add3" asp-controller="Index" method="post">
+    <table>
+        <tbody>
+            <tr>
+                <td><label asp-for="Steps"></label></td>
+                <td>
+                    <textarea asp-for="Steps"></textarea>
+                    <span asp-validation-for="Steps"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Save Recipe" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
