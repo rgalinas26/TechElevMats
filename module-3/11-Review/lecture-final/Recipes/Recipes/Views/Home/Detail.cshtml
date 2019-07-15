@@ -1,0 +1,50 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Recipe Detail</h1>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td>Prep Time</td>
+            <td>@Model.PrepTime</td>
+        </tr>
+        <tr>
+            <td>Cook Time</td>
+            <td>@Model.CookTime</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<h2>Ingredient</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Ingredient ing in Model.Ingredients)
+        {
+            <tr>
+                <td>@ing.Name</td>
+                <td>@ing.Quantity</td>
+                <td>@ing.Unit</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h2>Steps</h2>
+<p>@Model.Steps</p>

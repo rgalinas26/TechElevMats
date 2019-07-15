@@ -1,0 +1,30 @@
+﻿@model IList<Recipe>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Recipes</h1>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Meal</th>
+            <th>Cuisine</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Recipe recipe in Model)
+        {
+            <tr>
+                <td>@recipe.Id</td>
+                <td><a asp-action="Detail" asp-controller="Home" asp-route-id="@recipe.Id">@recipe.Name</a></td>
+                <td>@recipe.Meal</td>
+                <td>@recipe.Cuisine</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

@@ -1,0 +1,12 @@
+﻿@model Preferences
+@{
+    ViewData["Title"] = "Preferences";
+}
+
+<h1>Preferences</h1>
+<form asp-action="Preferences" asp-controller="Home" method="post">
+    <label>Cuisine: </label>
+    <input asp-for="Cuisine" />
+    <br/>
+    <input type="submit" value="Save" />
+</form>
