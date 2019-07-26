@@ -1,0 +1,12 @@
+:root {
+    --carbs-bg: Yellow;
+    --carbs-fg: black;
+    --protein-bg: lightgreen;
+    --protein-fg: black;
+    --fat-bg: lightblue;
+    --fat-fg: black;
+}
+
+/* th {
+    background-color: red;
+} */
